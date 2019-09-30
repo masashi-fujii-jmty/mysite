@@ -1,0 +1,458 @@
+// Place all the styles related to the lp controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* reset ================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #06C;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+input {
+  background-color: transparent;
+  outline-width: 0;
+}
+
+form input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+figure {
+  margin: 0;
+  padding: 0;
+
+}
+/* 共通レイアウト ================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:active,a:hover {
+  outline-width: 0;
+}
+
+.main {
+  background-color: #f9f9f9;
+  background-image: url("/images/main-bg-img.png");
+  background-size: 320px;
+  padding: 32px 0;
+}
+.link-area {
+  margin: 32px 0;
+  text-align: center;
+  font-size: 16px;
+}
+/* 320px以上 ================================ */
+@media screen and (min-width: 320px) {
+  .menu > li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .menu > li > a {
+    display: block;
+    padding: 0.7rem 1rem;
+    line-height: 1;
+  }
+
+  .menu a,
+  .menu button,
+  .menu input,
+  .menu select {
+    margin-bottom: 0;
+  }
+
+  .menu > li > a i,
+  .menu > li > a img,
+  .menu > li > a svg {
+    vertical-align: middle;
+  }
+
+  .menu > li > a i+span,
+  .menu > li > a img+span,
+  .menu > li > a svg+span {
+    vertical-align: middle;
+  }
+
+  .menu > li > a i,
+  .menu > li > a img,
+  .menu > li > a svg {
+    margin-right: 0.25rem;
+    display: inline-block;
+  }
+
+  .menu > li,
+  .menu.horizontal > li {
+    display: table-cell;
+  }
+
+  .menu.expanded {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .menu.expanded > li:first-child:last-child {
+    width: 100%;
+  }
+
+  .menu.vertical > li {
+    display: block;
+  }
+  @media print, screen and (min-width: 40em) {
+    .menu.medium-horizontal > li {
+      display: table-cell;
+    }
+
+    .menu.medium-expanded {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .menu.medium-expanded > li:first-child:last-child {
+      width: 100%;
+    }
+
+    .menu.medium-vertical > li {
+      display: block;
+    }
+  }
+  @media print, screen and (min-width: 64em) {
+    .menu.large-horizontal > li {
+      display: table-cell;
+    }
+
+    .menu.large-expanded {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .menu.large-expanded > li:first-child:last-child {
+      width: 100%;
+    }
+
+    .menu.large-vertical > li {
+      display: block;
+    }
+  }
+
+  .menu.simple li {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1;
+  }
+
+  .menu.simple a {
+    padding: 0;
+  }
+
+  .menu.simple li {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  .menu.simple.align-right li {
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+
+  .menu.align-right::after,
+  .menu.align-right::before {
+    display: table;
+    content: ' ';
+  }
+
+  .menu.align-right::after {
+    clear: both;
+  }
+
+  .menu.align-right > li {
+    float: right;
+  }
+
+  .menu.icon-top > li > a {
+    text-align: center;
+  }
+
+  .menu.icon-top > li > a i,
+  .menu.icon-top > li > a img,
+  .menu.icon-top > li > a svg {
+    display: block;
+    margin: 0 auto 0.25rem;
+  }
+
+  .menu.icon-top.vertical a > span {
+    margin: auto;
+  }
+
+  .menu.nested {
+    margin-left: 1rem;
+  }
+
+  .menu .active > a {
+    background: #219E62;
+    color: #fff;
+  }
+
+  .menu.menu-bordered li {
+    border: 1px solid #e6e6e6;
+  }
+
+  .menu.menu-bordered li:not(:first-child) {
+    border-top: 0;
+  }
+
+  .menu.menu-hover li:hover {
+    background-color: #e6e6e6;
+  }
+
+  .menu-text {
+    padding: 0.7rem 1rem;
+    font-weight: bold;
+    line-height: 1;
+    color: inherit;
+  }
+
+  .menu-centered {
+    text-align: center;
+  }
+
+  .menu-centered > .menu {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .no-js [data-responsive-menu] ul {
+    display: none;
+  }
+
+  .menu-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .menu-icon::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+    content: '';
+  }
+
+  .menu-icon:hover::after {
+    background: #cacaca;
+    box-shadow: 0 7px 0 #cacaca, 0 14px 0 #cacaca;
+  }
+
+  .menu-icon.dark {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .menu-icon.dark::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #0a0a0a;
+    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
+    content: '';
+  }
+
+  .menu-icon.dark:hover::after {
+    background: #8a8a8a;
+    box-shadow: 0 7px 0 #8a8a8a, 0 14px 0 #8a8a8a;
+  }
+
+  #header {
+    border-bottom: 1px solid #E6E6E6;
+    width: 100%;
+  }
+
+  #header.fixed-top {
+    background-color: #fff;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+  }
+
+  #header .header-caption {
+    background-color: #219E62;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+  }
+
+  #header .header-caption h1 {
+    font-size: 0.8rem;
+  }
+
+  #header .header-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 50px;
+  }
+
+  #header .header-menu-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  #header .header-menu-container li {
+    width: 4.4rem;
+    text-align: center;
+    position: relative;
+  }
+
+  #header .header-menu-container li i {
+    font-size: 1.4rem;
+  }
+
+  #header .header-menu-container li span {
+    font-size: 0.7rem;
+  }
+
+  #header .header-menu-container li.is-active i,
+  #header .header-menu-container li.is-active span {
+    color: #219E62;
+  }
+
+  #header .header-menu-container li .badge {
+    position: absolute;
+    right: 4px;
+    top: 0;
+    z-index: 100;
+  }
+
+  #header .header-menu-container li .font-bold {
+    font-weight: bold;
+  }
+
+  #header .header-menu-container a {
+    color: #777;
+    text-align: center;
+    padding: 0.5rem 0 0.3rem;
+  }
+
+  .header-fixed-spacer {
+    height: 70px;
+  }
+  .header-container {
+    padding: 0 0 0 16px;
+  }
+  .main-text {
+    text-align: center;
+    margin: 0 0 16px 0;
+  }
+  .main-img {
+    text-align: center;
+  }
+
+}
+/* 960px以上 ================================ */
+@media screen and (min-width: 960px) {
+  .header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .main-section {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .main-text {
+    text-align: left;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  .main-img {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+  }
+  .sp-br {
+    display: none;
+
+  }
+}

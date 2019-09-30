@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LPを作ります</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-caption">
+        地元の掲示板 ジモティー
+      </div>
+      <div class="header-container">
+        <div class="u-margin-s-l">
+          <a href="＃"><img height="23" width="80" src="//d1d7kfcb5oumx0.cloudfront.net/assets/smartphone/icon_header_logo-bee5a08a87ca1d65c63e85651e6d856e26606b3c33c1368e675c40422a8ec874.png">
+          </a>
+        </div>
+        <div class="header-menu-container">
+          <ul class="menu icon-top">
+            <li>
+              <a data-open="search-box-modal" href="#" aria-controls="search-box-modal" aria-haspopup="true" tabindex="0">
+                <i class="fa fa-search fi-list"></i>
+                <span class="u-size-xs">
+                  検索
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-unlock-alt fi-list"></i>
+                <span class="u-size-xs">
+                  ログイン
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-user-plus fi-lsit"></i>
+                <span class="u-size-xs">
+                  会員登録
+                </span>
+              </a>
+            </li>
+            <li>
+              <a rel="nofollow" class="gtm_post gtm_post_from_other_by_not_signed_in" href="#">
+                <i class="fa fa-pencil fi-list"></i>
+                <span class="u-size-xs">
+                  投稿
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </header>
+    <%= yield %>
+  </body>
+</html>
